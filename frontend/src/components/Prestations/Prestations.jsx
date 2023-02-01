@@ -6,6 +6,7 @@ function Prestations() {
   return (
     <div className="Prestations">
       <h1 className="heading">Mes prestations</h1>
+      <p className="line" />
       <CardPrestation />
     </div>
   );
