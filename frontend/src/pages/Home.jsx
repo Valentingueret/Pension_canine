@@ -1,9 +1,9 @@
-import NavBar from "@components/NavBar";
+import Pensions from "@components/Pensions/Pensions";
 
 export default function Home() {
   return (
     <div>
-      <NavBar />
+      <Pensions />
     </div>
   );
 }
