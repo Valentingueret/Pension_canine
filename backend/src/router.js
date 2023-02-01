@@ -1,13 +1,12 @@
 const express = require("express");
 
 const router = express.Router();
+const pensionsControllers = require("./controllers/pensions.controllers");
+const animauxControllers = require("./controllers/animaux.controllers");
 
-const itemControllers = require("./controllers/itemControllers");
-
-router.get("/items", itemControllers.browse);
-router.get("/items/:id", itemControllers.read);
-router.put("/items/:id", itemControllers.edit);
-router.post("/items", itemControllers.add);
-router.delete("/items/:id", itemControllers.destroy);
+router.get("/pensions", pensionsControllers.getPensions);
+router.get("/pensions/:id", pensionsControllers.getPensionsById);
+router.get("/animaux", animauxControllers.getAnimaux);
+router.get("/animaux/:id", animauxControllers.getAnimauxById);
 
 module.exports = router;
