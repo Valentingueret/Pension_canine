@@ -1,28 +1,24 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "../styles/NavBar.scss";
 
 function NavBar() {
   return (
     <div className="NavBar">
-      <NavLink to="/pensions">
-        <button type="button" className="btn-navbar">
-          Mes pensions
-        </button>
+      <NavLink to="/pensions" className="logo">
+        logo
       </NavLink>
-      <NavLink to="/prestations">
-        <button type="button" className="btn-navbar">
-          Mes prestations
-        </button>
+      <NavLink to="/pensions" className="p-navbar">
+        Mes pensions
       </NavLink>
-      <NavLink to="/contact">
-        <button type="button" className="btn-navbar">
-          contact
-        </button>
+      <NavLink to="/prestations" className="p-navbar">
+        Mes prestations
       </NavLink>
-      <NavLink to="/a-propos-de-moi">
-        <button type="button" className="btn-navbar">
-          A propos de moi
-        </button>
+      <NavLink to="/contact" className="p-navbar">
+        contact
+      </NavLink>
+      <NavLink to="/a-propos-de-moi" className="p-navbar">
+        A propos de moi
       </NavLink>
     </div>
   );

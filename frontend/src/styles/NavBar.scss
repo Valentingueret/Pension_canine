@@ -1,0 +1,22 @@
+.NavBar {
+  background-color: #a90000;
+  display: flex;
+  justify-content: space-between;
+  gap: 2%;
+  padding: 10px 40px 10px 10px;
+
+  .logo {
+    background-color: aqua;
+    border-radius: 50px;
+  }
+
+  .p-navbar {
+    background-color: white;
+    border-radius: 50px;
+    padding: 5px;
+    text-decoration: none;
+    width: 130px;
+    height: 20px;
+    color: black;
+  }
+}
