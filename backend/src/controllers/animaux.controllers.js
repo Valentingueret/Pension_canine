@@ -24,8 +24,16 @@ const postAnimaux = async (req, res) => {
   console.warn(animaux);
 };
 
+const deleteAnimauxById = async (req, res) => {
+  const id = parseInt(req.params.id, 10);
+  const animaux = await animauxModel.deleteModelAnimauxById(id);
+  res.status(200).send("Animal deleted");
+  console.warn(animaux);
+};
+
 module.exports = {
   getAnimaux,
   getAnimauxById,
   postAnimaux,
+  deleteAnimauxById,
 };

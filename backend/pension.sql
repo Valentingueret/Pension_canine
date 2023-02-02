@@ -26,12 +26,12 @@ CREATE TABLE IF NOT EXISTS `pensiondb`.`pensions` (
   `idPensions` INT NOT NULL AUTO_INCREMENT,
   `type` VARCHAR(100) NOT NULL,
   `grandeur` VARCHAR(100) NOT NULL,
-  `nb_animal_prst` VARCHAR(45) NOT NULL,
-  `img_pension` VARCHAR(1024) NOT NULL,
+  `nbAnimalPrst` VARCHAR(45) NOT NULL,
+  `imgPension` VARCHAR(1024) NOT NULL,
   PRIMARY KEY (`idPensions`))
 ENGINE = InnoDB;
     ALTER TABLE `pensiondb`.`pensions`
-ALTER COLUMN img_pension
+ALTER COLUMN imgPension
 SET
     DEFAULT "image-animaux-default.jpg";
 
@@ -88,9 +88,9 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `pensiondb`;
-INSERT INTO `pensiondb`.`pensions` (`idPensions`, `type`, `grandeur`, `nb_animal_prst`, `img_pension`) VALUES (1, 'Canine', '100', '3', DEFAULT);
-INSERT INTO `pensiondb`.`pensions` (`idPensions`, `type`, `grandeur`, `nb_animal_prst`, `img_pension`) VALUES (2, 'Féline', '100', '2', DEFAULT);
-INSERT INTO `pensiondb`.`pensions` (`idPensions`, `type`, `grandeur`, `nb_animal_prst`, `img_pension`) VALUES (3, 'Nac', '20', '2', DEFAULT);
+INSERT INTO `pensiondb`.`pensions` (`idPensions`, `type`, `grandeur`, `nbAnimalPrst`, `imgPension`) VALUES (1, 'Canine', '100', '3', 'image-chien-pension.jpg');
+INSERT INTO `pensiondb`.`pensions` (`idPensions`, `type`, `grandeur`, `nbAnimalPrst`, `imgPension`) VALUES (2, 'Féline', '100', '2', 'image-chat-pension.jpg');
+INSERT INTO `pensiondb`.`pensions` (`idPensions`, `type`, `grandeur`, `nbAnimalPrst`, `imgPension`) VALUES (3, 'Nac', '20', '2', DEFAULT);
 
 COMMIT;
 

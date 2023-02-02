@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../../styles/CardPension.scss";
+import defaultImage from "../../assets/image-animaux-default.jpg";
 
 function CardPension() {
   const [pensions, setPensions] = useState([]);
 
   const getPensions = () => {
-    axios.get("http://localhost:5000/Pensions").then((res) => {
+    axios.get(`${import.meta.env.VITE_BACKEND_URL}/Pensions`).then((res) => {
       setPensions(res.data);
+      console.warn(res.data);
     });
   };
 
@@ -20,10 +22,14 @@ function CardPension() {
       <ul className="pensions-list">
         {pensions.map((pension) => (
           <li key={pension.id} className="card-pension">
-            <img src="./backend/image-animaux-default.jpg" alt="img_pensions" />
-            <p>{pension.nb_animal_prst}</p>
-            <p>{pension.grandeur}m </p>
+            <img
+              src={defaultImage}
+              alt="img_pensions"
+              className="img-card-pension"
+            />
             <p>{pension.type} </p>
+            <p>{pension.nbAnimalPrst}</p>
+            <p>{pension.grandeur}m²</p>
           </li>
         ))}
       </ul>

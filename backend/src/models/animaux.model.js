@@ -21,8 +21,17 @@ const postModelAnimaux = async (type, nom, age, imgAnimaux, pensionsId) => {
   return result;
 };
 
+const deleteModelAnimauxById = async (id) => {
+  const [result] = await connection.query(
+    "DELETE FROM animaux WHERE idAnimaux = ?",
+    [id]
+  );
+  return result;
+};
+
 module.exports = {
   getModelAnimaux,
   getModelAnimauxById,
   postModelAnimaux,
+  deleteModelAnimauxById,
 };
