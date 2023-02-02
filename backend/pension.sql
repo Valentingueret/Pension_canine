@@ -45,24 +45,24 @@ CREATE TABLE IF NOT EXISTS `pensiondb`.`animaux` (
   `type` VARCHAR(100) NOT NULL,
   `nom` VARCHAR(100) NOT NULL,
   `age` VARCHAR(45) NOT NULL,
-  `img_animaux` VARCHAR(1024) NOT NULL,
-  `pensions_id` INT NOT NULL,
-  PRIMARY KEY (`idAnimaux`, `pensions_id`),
-  INDEX `fk_animaux_pensions_idx` (`pensions_id` ASC) VISIBLE,
+  `imgAnimaux` VARCHAR(1024) NOT NULL,
+  `pensionsId` INT NOT NULL,
+  PRIMARY KEY (`idAnimaux`, `pensionsId`),
+  INDEX `fk_animaux_pensionsIdx` (`pensionsId` ASC) VISIBLE,
   CONSTRAINT `fk_animaux_pensions`
-    FOREIGN KEY (`pensions_id`)
+    FOREIGN KEY (`pensionsId`)
     REFERENCES `pensiondb`.`pensions` (`idPensions`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 ALTER TABLE `pensiondb`.`animaux`
-ALTER COLUMN img_animaux
+ALTER COLUMN imgAnimaux
 SET
     DEFAULT "image-animaux-default.jpg";
 
     ALTER TABLE `pensiondb`.`animaux`
-ALTER COLUMN pensions_id
+ALTER COLUMN pensionsId
 SET
     DEFAULT "2";
 -- -----------------------------------------------------
@@ -100,13 +100,13 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `pensiondb`;
-INSERT INTO `pensiondb`.`animaux` (`idAnimaux`, `type`, `nom`, `age`, `img_animaux`, `pensions_id`) VALUES (1, 'Chien', 'Bob', '2ans', DEFAULT, 1);
-INSERT INTO `pensiondb`.`animaux` (`idAnimaux`, `type`, `nom`, `age`, `img_animaux`, `pensions_id`) VALUES (2, 'Chat', 'Romeo', '1ans', DEFAULT, 2);
-INSERT INTO `pensiondb`.`animaux` (`idAnimaux`, `type`, `nom`, `age`, `img_animaux`, `pensions_id`) VALUES (3, 'Chat', 'Loulou', '12ans', DEFAULT, 2);
-INSERT INTO `pensiondb`.`animaux` (`idAnimaux`, `type`, `nom`, `age`, `img_animaux`, `pensions_id`) VALUES (4, 'Chien', 'Doggy', '4ans', DEFAULT, 1);
-INSERT INTO `pensiondb`.`animaux` (`idAnimaux`, `type`, `nom`, `age`, `img_animaux`, `pensions_id`) VALUES (5, 'Nac', 'Griiffon', '2ans', DEFAULT, 3);
-INSERT INTO `pensiondb`.`animaux` (`idAnimaux`, `type`, `nom`, `age`, `img_animaux`, `pensions_id`) VALUES (6, 'Nac', 'Griffette', '1ans', DEFAULT, 3);
-INSERT INTO `pensiondb`.`animaux` (`idAnimaux`, `type`, `nom`, `age`, `img_animaux`, `pensions_id`) VALUES (7, 'Chien', 'Popole', '7ans', DEFAULT, 1);
+INSERT INTO `pensiondb`.`animaux` (`idAnimaux`, `type`, `nom`, `age`, `imgAnimaux`, `pensionsId`) VALUES (1, 'Chien', 'Bob', '2ans', DEFAULT, 1);
+INSERT INTO `pensiondb`.`animaux` (`idAnimaux`, `type`, `nom`, `age`, `imgAnimaux`, `pensionsId`) VALUES (2, 'Chat', 'Romeo', '1ans', DEFAULT, 2);
+INSERT INTO `pensiondb`.`animaux` (`idAnimaux`, `type`, `nom`, `age`, `imgAnimaux`, `pensionsId`) VALUES (3, 'Chat', 'Loulou', '12ans', DEFAULT, 2);
+INSERT INTO `pensiondb`.`animaux` (`idAnimaux`, `type`, `nom`, `age`, `imgAnimaux`, `pensionsId`) VALUES (4, 'Chien', 'Doggy', '4ans', DEFAULT, 1);
+INSERT INTO `pensiondb`.`animaux` (`idAnimaux`, `type`, `nom`, `age`, `imgAnimaux`, `pensionsId`) VALUES (5, 'Nac', 'Griiffon', '2ans', DEFAULT, 3);
+INSERT INTO `pensiondb`.`animaux` (`idAnimaux`, `type`, `nom`, `age`, `imgAnimaux`, `pensionsId`) VALUES (6, 'Nac', 'Griffette', '1ans', DEFAULT, 3);
+INSERT INTO `pensiondb`.`animaux` (`idAnimaux`, `type`, `nom`, `age`, `imgAnimaux`, `pensionsId`) VALUES (7, 'Chien', 'Popole', '7ans', DEFAULT, 1);
 
 COMMIT;
 
