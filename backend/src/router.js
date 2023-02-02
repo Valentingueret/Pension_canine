@@ -15,5 +15,5 @@ router.post("/pensions", pensionsControllers.postPensions);
 router.get("/animaux", animauxControllers.getAnimaux);
 router.get("/animaux/:id", animauxControllers.getAnimauxById);
 router.post("/animaux", animauxControllers.postAnimaux);
-
+router.delete("/animaux/:id", animauxControllers.deleteAnimauxById);
 module.exports = router;

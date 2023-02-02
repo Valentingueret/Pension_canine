@@ -1,0 +1,32 @@
+.APropos {
+  display: flex;
+  flex-direction: row;
+
+  .carrée-img {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    gap: 3px;
+    width: 100%;
+
+    .ImgLeftTop {
+      grid-area: 1 / 1 / 5 / 2;
+      width: 100%;
+      height: 100%;
+    }
+    .ImgTopRight {
+      width: 80%;
+      grid-area: 1 / 2 / 3 / 3;
+    }
+    .ImgMiddleRight {
+      width: 80%;
+      grid-area: 3 / 2 / 5 / 3;
+    }
+    .ImgBotom {
+      width: 80%;
+      grid-area: 5 / 1 / 7 / 3;
+    }
+  }
+}
