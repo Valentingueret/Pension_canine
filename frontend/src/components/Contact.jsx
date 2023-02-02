@@ -1,12 +1,11 @@
 import React from "react";
-import NavBar from "./NavBar";
+import "../styles/App.scss";
 
 function Contact() {
   return (
     <div>
-      <NavBar />
-
       <h1>Contact</h1>
+      <p className="line" />
     </div>
   );
 }

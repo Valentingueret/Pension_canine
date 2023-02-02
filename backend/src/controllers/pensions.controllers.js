@@ -11,7 +11,20 @@ const getPensionsById = async (req, res) => {
   res.status(200).send(pension);
 };
 
+const postPensions = async (req, res) => {
+  const { type, grandeur, nbAnimalPrst, imgPension } = req.body;
+  const pensions = await pensionsModel.postModelPensions(
+    type,
+    grandeur,
+    nbAnimalPrst,
+    imgPension
+  );
+  res.status(201).send("pension created");
+  console.warn(pensions);
+};
+
 module.exports = {
   getPensions,
   getPensionsById,
+  postPensions,
 };
