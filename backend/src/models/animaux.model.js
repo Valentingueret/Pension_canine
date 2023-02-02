@@ -6,9 +6,10 @@ const getModelAnimaux = async () => {
 };
 
 const getModelAnimauxById = async (id) => {
-  const [result] = await connection.query("SELECT * FROM animaux where id= ?", [
-    id,
-  ]);
+  const [result] = await connection.query(
+    "SELECT * FROM animaux where idAnimaux= ?",
+    [id]
+  );
   return result;
 };
 

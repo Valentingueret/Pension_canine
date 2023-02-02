@@ -7,7 +7,7 @@ const getModelPensions = async () => {
 
 const getModelPensionsById = async (id) => {
   const [result] = await connection.query(
-    "SELECT * FROM pensions where id= ?",
+    "SELECT * FROM pensions where idPensions= ?",
     [id]
   );
   return result;
